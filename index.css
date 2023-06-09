@@ -159,7 +159,7 @@ body {
 
 
 
-/*apply css properties to container class*/
+ /*apply css properties to function */
 
 .contain {
   justify-content: center;
@@ -169,7 +169,6 @@ body {
   text-align: center;
 }
 
-/*apply css properties to button tag*/
 
 button {
   width: 50px;
@@ -177,29 +176,48 @@ button {
   font-size: 30px;
   background-color: green;
   color: honeydew;
-  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
-/*apply hover effect to button tag*/
 
 button:hover {
   background-color: greenyellow;
   color:red;
 }
 
-/*apply css properties to h2 tag*/
 
 #counting {
   color: black;
   margin: 0 50px;
   font-size: 45px;
-  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
-/*apply css properties to h1 tag*/
 
 .heading-exmple{
-  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  text-align: center;
+  /* padding-left: 10%; */
+}
+
+
+/* Promise section css */
+.promise-heading {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+
+.promise-definition {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.promise-exmple{
+  margin-bottom: 10px;
   font-size: 25px;
   text-align: center;
   /* padding-left: 10%; */

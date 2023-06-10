@@ -2,7 +2,7 @@
 
 let data = 0;
 
-//printing default value of data that is 0 in h2 tag
+//printing default value of data  0 in h2 tag
 document.getElementById("counting").innerText = data;
 
 //creation of increment function
@@ -88,6 +88,8 @@ let arr2 = arr
 console.log(arr);
 console.log(arr2);
 
+
+
 // callback and higherorder function:-
 
 // Function which get and passed as an argument to another function is called
@@ -96,48 +98,138 @@ console.log(arr2);
 // Function which takes another function as an argument is called HOF
 
 // exmple:-
-const add=(a,b)=>{
-  return a+b;
+const add = (a, b) => {
+  return a + b;
+};
+console.log(add(5, 2));
 
-}
-console.log(add(5,2));
+const sub = (a, b) => {
+  return Math.abs(a - b);
+};
+const multiply = (a, b) => {
+  return a * b;
+};
 
-const sub=(a,b)=>{
-  return Math.abs(a-b);
-
-}
-const multiply=(a,b)=>{
-  return a*b
-}
-
-const calculator=(num1,num2, operator)=>{
-  return operator(num1,num2);
-
-}
-console.log(calculator(5,2,multiply));
-
+const calculator = (num1, num2, operator) => {
+  return operator(num1, num2);
+};
+console.log(calculator(5, 2, multiply));
 
 // promise exmple:-
 function item() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const name = ["shikha","deepika","deepshikha"];
-        resolve("success");
-        reject('Failure');
-    }, 2000); 
+      const name = ["shikha", "deepika", "deepshikha"];
+      resolve("success");
+      reject("Failure");
+    }, 2000);
   });
 }
 console.log("getname");
 
-const resultElement = document.getElementById('result');
-resultElement.innerText = 'Loading...';
+const resultElement = document.getElementById("result");
+resultElement.innerText = "Loading...";
 
 item()
   .then((result) => {
     resultElement.innerText = result;
-    console.log("getname fetched successfully",result  );
+    console.log("getname fetched successfully", result);
   })
   .catch((error) => {
     resultElement.innerText = error;
-    console.log("getname fetched getname",error  );
+    console.log("getname fetched getname", error);
   });
+
+
+
+// bubblesort expmple:-
+function bubbleSort(arr) {
+  const n = arr.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap elements
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+
+  return arr;
+}
+
+// Example use:
+const array = [2, 4, 6, 30, 10, 15, 20];
+console.log("Original array:", array);
+
+const sortedArray = bubbleSort(array);
+console.log("Sorted array:", sortedArray);
+
+
+// section-4:-
+// Consider an array of size 15 or more, where the array consists of random numbers.Then find -
+// Sum of array:-
+
+function sumofArray(arr) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
+const number = [2, 4, 5, 6, 8, 9, 10, 12, 14, 15];
+const output = sumofArray(number);
+
+console.log("The sum of the array is:", output);
+
+// or
+const numbers = [1, 2, 3, 4, 5, 7, 9, 10, 12, 14];
+const adds = numbers.reduce((acc, curr) => acc + curr, 0);
+
+console.log("The sum of the array is", adds);
+
+// Largest numbers in array:-
+
+const num = [2, 4, 6, 8, 10, 12, 14];
+let largestNumber = numbers[0];
+
+for (let i = 1; i < num.length; i++) {
+  if (num[i] > largestNumber) {
+    largestNumber = num[i];
+  }
+}
+
+console.log("The largest number is ", largestNumber);
+
+// Find unique numbers in array:-
+
+const uniqueArray = [1, 2, 2, 3, 4, 4, 5, 6, 6, 10, 10, 12, 12];
+const uniqueNumbers = [];
+
+for (let i = 0; i < uniqueArray.length; i++) {
+  if (!uniqueNumbers.includes(uniqueArray[i])) {
+    uniqueNumbers.push(uniqueArray[i]);
+  }
+}
+
+console.log("Unique numbers is ", uniqueNumbers);
+
+// or
+const uniqueArr = [1, 2, 2, 3, 4, 4, 5, 6, 6];
+const uniqueNumber = [...new Set(uniqueArr)];
+
+console.log("Unique numbers in the array:", uniqueNumber);
+
+// Repeated numbers in array:-
+const nums = [1, 2, 2, 3, 4, 4, 5, 6, 6,7,9,9,10,11,12,14,14];
+const repeatedNumbers = nums.filter((number, index) => nums.indexOf(number) !== index);
+
+console.log("Repeated numbers is", repeatedNumbers);
+
+
+
